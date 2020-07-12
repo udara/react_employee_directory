@@ -5,7 +5,7 @@ class Search extends React.Component{
         
         super(props);
         this.state = {
-            search : "male",
+            search : "",
         }
         this.handleChange = this.handleChange.bind(this);
     }
