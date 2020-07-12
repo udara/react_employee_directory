@@ -17,7 +17,17 @@ class EmployeeTable extends React.Component{
                        employee.gender.includes(this.props.search) ||  
                        employee.email.includes(this.props.search) ||
                        employee.phone.includes(this.props.search)
-                   )).map(employee => (
+                   )).sort(
+                    function (a, b) {
+                        if (a.name.first < b.name.first){
+                            return -1;
+                        } else if (a.name.first < b.name.first){
+                            return 1;
+                        } else {
+                            return 0;   
+                        }
+                    }  
+                   ).map(employee => (
                 <div className="row">
                     <div className="col-md-3">        
                         {employee.name.first} {employee.name.last}
